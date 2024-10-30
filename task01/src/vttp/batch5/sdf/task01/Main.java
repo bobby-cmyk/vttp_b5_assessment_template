@@ -16,7 +16,7 @@ public class Main {
 		BikeFileProcessor bikeFileProcessor = new BikeFileProcessor();
 
 		try {
-			// Read the csv file containing information of the bikes
+			// Read the csv file
 			bikeFileProcessor.read(csvPath);
 		}
 
@@ -30,6 +30,7 @@ public class Main {
 
 		TemplateProcessor templateProcessor = new TemplateProcessor();
 
+		// Get the top five days and fill it in the template
 		templateProcessor.printFilled(bikeFileProcessor.getTopFive());
 	}
 }
