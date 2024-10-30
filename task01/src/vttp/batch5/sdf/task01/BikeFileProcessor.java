@@ -40,10 +40,11 @@ public class BikeFileProcessor {
             // Split the records into the columns -> String array to use BikeEntry
             String[] cols = record.split(","); 
             
+            // Add entry into arraylist
             bikeEntries.add(BikeEntry.toBikeEntry(cols));
         }
 
-        // 
+        // Close readers
         br.close();
         fr.close();
     }

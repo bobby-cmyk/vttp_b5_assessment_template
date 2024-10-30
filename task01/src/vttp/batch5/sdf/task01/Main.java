@@ -12,7 +12,7 @@ public class Main {
 		// Hardcode the csv file path in variable
 		String csvPath = "day.csv";
 
-		// Initialise BikeFileProcessor object
+		// Initialise BikeFileProcessor
 		BikeFileProcessor bikeFileProcessor = new BikeFileProcessor();
 
 		try {
@@ -28,9 +28,10 @@ public class Main {
 			System.err.printf("Error occured when reading CSV file! : %s", ie.getMessage());
 		}
 
+		// Initialise template processor
 		TemplateProcessor templateProcessor = new TemplateProcessor();
 
-		// Get the top five days and fill it in the template
+		// Get the top five days and print the filled template
 		templateProcessor.printFilled(bikeFileProcessor.getTopFive());
 	}
 }

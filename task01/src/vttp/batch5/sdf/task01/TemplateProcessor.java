@@ -1,25 +1,23 @@
 package vttp.batch5.sdf.task01;
 
-
 import vttp.batch5.sdf.task01.models.BikeEntry;
 import java.util.ArrayList;
 
 public class TemplateProcessor {
     
-    private String TEMPLATE = "The <position> (position) recorded number of cyclists was in <season> (season), on a <day> (day) in the month of <month> (month).\nThere were a total of <total> (total) cyclist. The weather was <weather> (weather).\n<day> (day) was <holiday>.";
+    private final String TEMPLATE = "The <position> (position) recorded number of cyclists was in <season> (season), on a <day> (day) in the month of <month> (month).\nThere were a total of <total> (total) cyclist. The weather was <weather> (weather).\n<day> (day) was <holiday>.";
+   
     private final String[] POSITION = {"highest"
-                                        ,"second highest"
-                                        ,"third highest"
-                                        ,"fourth highest"
-                                        ,"fifth highest"};
+                                     , "second highest"
+                                     , "third highest"
+                                     , "fourth highest"
+                                     , "fifth highest"};
 
-    public final String[] WEATHER = { "Clear, Few clouds, Partly cloudy, Partly cloudy" 
-                                            , "Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist"
-                                            , "Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds"
-                                            , "Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog" };
+    private final String[] WEATHER = { "Clear, Few clouds, Partly cloudy, Partly cloudy" 
+                                    , "Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist"
+                                    , "Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds"
+                                    , "Heavy Rain + Ice Pallets + Thunderstorm + Mist, Snow + Fog" };
     
-
-
     public void printFilled(ArrayList<BikeEntry> topEntries) {
         
         System.out.println("");
@@ -39,7 +37,6 @@ public class TemplateProcessor {
             System.out.println(template);
             System.out.println("");
         }
-        
     }
 
     private String toPosition(int position) {
@@ -55,13 +52,13 @@ public class TemplateProcessor {
         }
     }
 
-    private String toWeather(int weatherCode) {
-        switch (weatherCode) {
+    private String toWeather(int weather) {
+        switch (weather) {
             case 1:
             case 2:
             case 3:
             case 4:
-                return WEATHER[weatherCode - 1];
+                return WEATHER[weather - 1];
             default:
                 return "incorrect weather";
         }
