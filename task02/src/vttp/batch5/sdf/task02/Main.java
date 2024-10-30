@@ -13,47 +13,23 @@ public class Main {
 			System.exit(-1);
 		}
 
+		// Get the path of the board from the command line
 		String tttFilePath = args[0]; 
 
-		// Print out the file that is being processed
-		System.out.printf("Processing: %s\n", tttFilePath);
-
-		//Test
+		// Instantiate the TTTEngine
 		TTTEngine tttEngine = new TTTEngine();
 
 		try {
-			tttEngine.readBoard(tttFilePath);
+			tttEngine.start(tttFilePath);
 		}
 
 		catch (FileNotFoundException fe) {
-			System.err.printf("Unable to find board txt file: %s", fe.getMessage());
+			System.err.printf("Unable to find board txt file: %s\n", fe.getMessage());
 		}
 
 		catch (IOException ie) {
-			System.out.printf("Error occured when reading txt file: %s", ie.getMessage());
+			System.out.printf("Error occured when reading txt file: %s\n", ie.getMessage());
 		}
-		
-		System.out.printf("\n");
 
-		tttEngine.printBoard();
-
-		
 	}
 }
-
-
-// Pseudocode 
-
-// TTT File Reader
- // Read the file line by line
- // add each of the charcter to a 2D array inside
-
-
- // TTTEngine
-	// method -> read file (String tttFile)
-
-	// method -> print board
-
-	// method -> isLegal(int x, int y) -> return boolean 
-	
-	// method -> getUtility (int x, int y) -> return int
