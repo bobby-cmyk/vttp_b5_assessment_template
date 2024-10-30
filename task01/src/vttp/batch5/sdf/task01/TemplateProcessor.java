@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class TemplateProcessor {
     
-    private String TEMPLATE = "The <position> recorded number of cyclists was in <season>, on a <day> in the month of <month>.\nThere were a total of <total> cyclist. The weather was <weather>.\n<day> was <holiday>.";
+    private String TEMPLATE = "The <position> (position) recorded number of cyclists was in <season> (season), on a <day> (day) in the month of <month> (month).\nThere were a total of <total> (total) cyclist. The weather was <weather> (weather).\n<day> (day) was <holiday>.";
     private final String[] POSITION = {"highest"
                                         ,"second highest"
                                         ,"third highest"
