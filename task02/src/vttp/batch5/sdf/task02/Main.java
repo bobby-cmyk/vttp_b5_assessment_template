@@ -9,7 +9,7 @@ public class Main {
 		
 		// Validate the command line argument
 		if (args.length != 1) {
-			System.err.println("Proper Usage: <TTT/figure<n>.txt>");
+			System.err.println("Proper Usage: <TTT/boardORfigure<n>.txt>");
 			System.exit(-1);
 		}
 
