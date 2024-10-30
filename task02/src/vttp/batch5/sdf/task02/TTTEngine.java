@@ -12,12 +12,12 @@ public class TTTEngine {
     private char[][] board;
 
     public TTTEngine() {
-        board = new char[3][3];
+        board = new char[Constants.BOARD_LENGTH][Constants.BOARD_LENGTH];
     }
 
     public void start(String tttFilePath) throws FileNotFoundException, IOException {
-        // Print out the file that is being processed
-		System.out.printf("\nProcessing: %s\n", tttFilePath);
+        // Print out the file name that is being processed
+		System.out.printf("Processing: %s\n", tttFilePath);
         
         System.out.println("");
 
@@ -51,11 +51,7 @@ public class TTTEngine {
             // Print the y and x position with the utility of this move
             System.out.printf("y=%d, x=%d, utility=%d\n", y, x, utility);
         }
-
-        System.out.println("");
     }
-
-    
 
     private void readBoard(String tttFilePath) throws FileNotFoundException, IOException {
         // Throw exceptions, to be handled in main file
@@ -83,6 +79,8 @@ public class TTTEngine {
 
     private void printBoard() {
         
+        System.out.println("Board:");
+
         for (int i = 0; i < Constants.BOARD_LENGTH; i++) {
             for (int j = 0; j < Constants.BOARD_LENGTH; j++) {
                 System.out.print(board[i][j]);
@@ -105,7 +103,6 @@ public class TTTEngine {
                 }
             }
         }
-
         return legalPos;
     }
 
@@ -118,7 +115,7 @@ public class TTTEngine {
         if (pos == Constants.EMPTY) {
             return true;
         }
-
+        
         // If it is not empty, it is not legal
         return false;
     }
@@ -174,5 +171,4 @@ public class TTTEngine {
         // Else it is a neutral move
         return 0;
     }
-    
 }

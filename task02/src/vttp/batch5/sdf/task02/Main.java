@@ -24,11 +24,11 @@ public class Main {
 		}
 
 		catch (FileNotFoundException fe) {
-			System.err.printf("Unable to find board txt file: %s\n", fe.getMessage());
+			System.err.printf("Unable to find txt file: %s\n", fe.getMessage());
 		}
 
 		catch (IOException ie) {
-			System.out.printf("Error occured when reading txt file: %s\n", ie.getMessage());
+			System.err.printf("Error occured when reading txt file: %s\n", ie.getMessage());
 		}
 
 	}
